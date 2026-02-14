@@ -133,19 +133,14 @@
 
   <script>
     function moveNo(button) {
-      const yesButton = document.querySelector(".yes");
-      const rect = yesButton.getBoundingClientRect();
-
-      // Small random offset near the Yes button
-      const offsetX = (Math.random() * 100) - 50; // -50px to +50px
-      const offsetY = (Math.random() * 60) - 30;  // -30px to +30px
-
+      const x = Math.random() * (window.innerWidth - button.clientWidth);
+      const y = Math.random() * (window.innerHeight - button.clientHeight);
       button.style.position = "absolute";
-      button.style.left = rect.left + offsetX + "px";
-      button.style.top = rect.top + offsetY + "px";
+      button.style.left = x + "px";
+      button.style.top = y + "px";
     }
 
-function sayYes() {
+    function sayYes() {
       document.getElementById("message").innerHTML =
         "This is just the beginning of our beautiful adventure. I promise to choose you, celebrate you, and love you louder every single day. Thank you for being my favorite person, my greatest blessing, and my forever. ❤️✨";
       document.getElementById("question").innerHTML = "Yay!!! 💕";
